@@ -136,7 +136,7 @@ export default function Hero() {
               Email
             </a>
             <a
-              href="https://drive.google.com/file/d/1GfZDbRwEOTZTGZUYbyV49pffLSjh4JrJ/view?usp=sharing"
+              href="https://drive.google.com/file/d/1IrJIj-Yrv3u-_UaBzsz2cH5djYEsdICZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
