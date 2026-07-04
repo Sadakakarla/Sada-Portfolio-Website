@@ -13,11 +13,11 @@ const education = [
     coursework: ["Deep Learning", "Pattern Recognition", "Reinforcement Learning", "Computer Vision", "Natural Language Processing", "LLM", "Robotics"],
   },
   {
-    id: "upes",
-    degree: "Bachelor of Technology in Computer Science",
-    institution: "University of Petroleum and Energy Studies",
-    period: "2018 – 2022",
-    location: "Dehradun, India",
+    id: "pes",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    institution: "PES University",
+    period: "Dec 2020 – May 2024",
+    location: "Bengaluru, India",
     coursework: ["Data Structures & Algorithms", "Machine Learning", "IoT", "Database Management Systems", "Big Data Analytics", "Statistics & Probability"],
   },
 ];

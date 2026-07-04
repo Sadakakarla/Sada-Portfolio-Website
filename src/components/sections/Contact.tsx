@@ -43,28 +43,28 @@ export default function Contact() {
             </p>
 
             <div className="flex flex-col gap-4">
-              <a href="mailto:shivanshgupta323@gmail.com" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
+              <a href="mailto:sadaa.kakarla@gmail.com" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
                 <Mail size={15} className="text-primary" />
-                shivanshgupta323@gmail.com
+                sadaa.kakarla@gmail.com
               </a>
               <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
                 <MapPin size={15} className="text-primary" />
                 San Francisco Bay Area, CA
               </div>
-              <a href="https://github.com/shivansh052k" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
+              <a href="https://github.com/Sadakakarla" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
                 <SiGithub size={15} className="text-primary" />
-                github.com/shivansh052k
+                github.com/Sadakakarla
               </a>
-              <a href="https://www.linkedin.com/in/-shivansh-gupta/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
+              <a href="https://www.linkedin.com/in/sada-kakarla" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-mono text-sm text-muted-foreground hover:text-primary transition-colors w-fit">
                 <span className="text-primary text-xs font-bold">in</span>
-                linkedin.com/in/-shivansh-gupta
+                linkedin.com/in/sada-kakarla
               </a>
             </div>
 
             <div className="h-px bg-border" />
 
             <a
-              href="https://calendly.com/shivanshgupta323/30min"
+              href="https://calendly.com/sadaa-kakarla/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 font-mono text-sm border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-5 py-3 rounded-xl transition-all duration-200 w-fit"

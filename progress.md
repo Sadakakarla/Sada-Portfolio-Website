@@ -43,28 +43,38 @@ Files to edit, in order:
 - [x] `public/profile.png` — swapped photo
 - [x] `src/app/layout.tsx` — page `metadata.title` updated to her name
 - [x] `src/app/favicon.ico` — swapped favicon (initials icon)
-- [ ] `src/components/sections/About.tsx` — bio, stats
-- [ ] `src/components/sections/Experience.tsx` — work history
-- [ ] `src/components/sections/Projects.tsx` — project details
-- [ ] `src/components/sections/Education.tsx` — education details
-- [ ] `src/components/sections/Contact.tsx` — email, social links
-- [ ] `src/components/Footer.tsx` / `src/components/Navbar.tsx` — name/links
+- [x] `src/components/sections/About.tsx` — bio, stats, heading — done
+- [x] `src/components/sections/Experience.tsx` — work history (5 roles: Handshake, A2IL, OnePay, C-ISFCR, UN Academic Impact)
+- [x] `src/components/sections/Projects.tsx` — 7 projects (InferRoute, To3D, GlucoChat, PowerSight, NegotiableAI, AutismDiagnose, EagleEye) — github links set to "#" placeholder, need her actual repo URLs later
+- [x] `src/components/sections/Education.tsx` — MS AI @ UB, BTech CS @ PES University — coursework left empty (not on her resume)
+- [x] `src/components/sections/Contact.tsx` — email, location, GitHub/LinkedIn links, Calendly updated
+- [x] `src/components/Footer.tsx` / `src/components/Navbar.tsx` — name/links (Navbar already had "SK." logo)
 - [ ] `README.md` — update project description
 
-### Phase 4 — Aesthetic / frontend changes
-Goal: make it visually distinct from user's own portfolio (not a design overhaul, just differentiation).
-- [ ] `src/app/globals.css` — color palette / theme CSS variables
-- [ ] `src/app/layout.tsx` — font choices (Google Fonts)
-- [ ] `src/components/ui/circuit-grid.tsx` / `src/components/ui/neural-canvas.tsx` — background animation styling
-- [ ] `src/components/Cursor.tsx` — custom cursor style
-- [ ] `src/components/LoadingScreen.tsx` — loading animation style
-- [ ] Decide specifics (colors/fonts) when reaching this phase
+**Phase 3 core sections: DONE.** Order changed — doing Phase 5 (contact backend) before Phase 4 (aesthetics), aesthetics saved for after whole site content is in place.
 
-### Phase 5 — Contact form backend
-- [ ] She creates her own [resend.com](https://resend.com) account + API key
-- [ ] Update local `.env.local` with her `RESEND_API_KEY` (and any recipient email var)
-- [ ] Check `src/app/api/contact/route.ts` for hardcoded email addresses — update to hers
-- [ ] Test contact form locally (`npm run dev`)
+### Phase 4 — Aesthetic / frontend changes (doing this AFTER Phase 5, before deploy)
+Goal: full visual overhaul so it doesn't look like "a guy's portfolio" — dark/light theme toggle stays, everything else fair game. Going one piece at a time. **Mode for this phase only**: assistant edits files directly (not guide-only like Phase 3) — propose changes in words first, get approval, implement, user reviews, iterate.
+
+- [x] Rose/mauve palette (light `#B94A6C`, dark `#E88AA6`) was first choice — **SUPERSEDED**, see below.
+- [x] `src/app/globals.css` — **FINAL palette: teal + peach + cream**, inspired by a reference "Creative Studio" portfolio design user liked. Light mode: bg `#FDF3E7`, fg `#1B3A35`, primary/teal `#1B6B5C`, new `--peach: #F2A785` var added. Dark mode: bg `#0D1A17`, fg `#F5EBDD`, primary/teal `#3ECFB8`, peach stays `#F2A785` both modes. Applied to `--primary`/`--accent`/`--ring`/`--sidebar-primary`/`--sidebar-ring` in both `:root` and `.dark`.
+- [x] `src/app/globals.css` — decorative hex recolored to match: `dot-grid-bg` and loader keyframe glow (previously purple, now teal/peach). Also fixed a stale bug: loader text was referencing `var(--font-syne)` which no longer existed after the font swap — changed to `var(--font-fraunces)`.
+- [x] `src/app/layout.tsx` + `globals.css` — fonts swapped: Syne→Fraunces (heading), JetBrains Mono→Manrope (body/mono), removed unused Instrument Serif. **Added**: Caveat script font (`--font-script`) for handwritten-style tagline/accent text.
+- [x] `src/components/ui/circuit-grid.tsx` / `src/components/ui/neural-canvas.tsx` — **NeuralCanvas removed from Hero entirely** (file still exists, just unused now). CircuitGrid still used as global background wrapper in `page.tsx`, not yet recolored/touched — still has old purple RGB hardcoded, needs updating when we get to it.
+- [ ] `src/components/Cursor.tsx` — custom cursor style — not started
+- [ ] `src/components/LoadingScreen.tsx` — loading animation style — not started
+
+- [~] **IN PROGRESS — Hero.tsx redesign** (first section tackled). Rewrote completely based on a reference image user liked (bold serif name, organic blob shapes behind photo, script tagline, sticker badge, floating sticky-note card, pill-shaped two-tone CTA buttons). Changes made: pill label badge, script-font tagline in peach, pill CTA buttons (one teal solid, one peach solid), organic blob shapes behind photo (teal blob + peach circle, blurred), "Open to Work" circular sticker badge (rotated), floating sticky-note card with heart icon, removed old rounded-pill photo frame/clipping so photo can eventually be a transparent cutout.
+  - Photo is still the original `public/profile.png` (regular photo with background, NOT a transparent cutout yet) — cutout requires an external tool (remove.bg or similar), user hasn't done this yet.
+  - Hit two dev-server issues along the way, both resolved: (1) Turbopack ChunkLoadError from stale cache, (2) image not refreshing after replacing `profile.png` — both fixed via `rm -rf .next && npm run dev` + hard browser refresh.
+  - **User feedback (2026-07-04, latest)**: current result looks "small and weird" next to the reference — photo too small on screen, blob shapes too subtle/pale, sticker badge + sticky note feel disconnected/bolted-on rather than integrated like the reference (where the photo is much larger/near-full-height and the shapes are bold saturated colors filling more of the frame).
+  - **NEXT STEP when resuming this session/task**: redo Hero sizing/proportions — make photo significantly larger (closer to reference's near-full-bleed photo), make blob shapes bigger and more saturated/less blurred-out, reposition badge/sticky-note so they visually overlap/anchor onto the photo rather than floating separately. Do this BEFORE moving to any other section (About, Skills, Experience, Projects, Education, Contact, Footer all still fully untouched aesthetically — still using generic default section styling).
+
+### Phase 5 — Contact form backend ✅ DONE
+- [x] She created her own [resend.com](https://resend.com) account + API key
+- [x] Updated local `.env.local` with her `RESEND_API_KEY`
+- [x] Updated `to:` recipient email in `src/app/api/contact/route.ts` to hers
+- [x] Tested contact form locally — delivered successfully
 
 ### Phase 6 — Deploy on her Vercel (browser only, no CLI)
 - [ ] Her Vercel dashboard → Add New Project → Import from GitHub → select her repo

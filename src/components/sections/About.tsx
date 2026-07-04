@@ -5,13 +5,10 @@ import { motion, useInView, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const stats = [
-  { value: 4, suffix: "+", label: "Years of Experience" },
-  { value: 5, suffix: "+", label: "Industries" },
-  { value: 3, suffix: "", label: "Multi-Stage Companies" },
-  { value: 15, suffix: "+", label: "AI Models Deployed" },
-  { value: 240, suffix: "M+", label: "Documents Processed" },
-  { value: 700, suffix: "B+", label: "Tokens Processed" },
-  { value: 7, suffix: "B+", label: "Chunks (128) Trained" },
+  { value: 2, suffix: "+", label: "Years of Experience" },
+  { value: 4, suffix: "+", label: "Industries" },
+  { value: 2, suffix: "", label: "Multi-Stage Companies" },
+  { value: 8, suffix: "+", label: "AI Models Deployed" },
   { value: 2, suffix: "", label: "Research Papers Published" },
 ];
 
@@ -52,10 +49,10 @@ export default function About() {
             <span className="text-primary">think & learn at scale.</span>
           </h2>
           <p className="font-mono text-sm text-muted-foreground leading-relaxed">
-            I'm an experienced AI/ML Engineer who builds production AI systems end to end — from model behavior to software reliability — with a focus on LLMs, RAG, agents, ranking, and recommender systems that stay fast, safe, and measurable at scale. I operate as an AI Engineer and Software Engineer in one, shipping systems that survive real traffic, enterprise constraints, and messy data.
+            I'm an experienced AI/ML Engineer who builds production AI systems end to end — from model behavior to software reliability — with a focus on LLMs, RAG, reinforcement learning, agents, ranking, and recommender systems that stay fast, safe, and measurable at scale. I operate as an AI/ML Engineer and Software Engineer in one, shipping systems that survive real traffic, enterprise constraints, and messy data.
           </p>
           <p className="font-mono text-sm text-muted-foreground leading-relaxed">
-            My career spans from Founding Software Engineer at an early-stage startup to architecting enterprise-level AI systems at Schneider Electric — retrieval pipelines, LLM inference optimizations, and agentic workflows used by thousands daily.
+            My career spans Software Engineer roles in AI/ML systems and healthcare GraphRAG at United Nations Academic Impact, AI/ML Engineering at C-ISFCR building RAG and hybrid retrieval pipelines, ML Engineering at OnePay building recommender systems at scale, applied AI research at UB's A2IL on multimodal agents, to AI Research at Handshake building agentic coding benchmarks and RLVR post-training pipelines — spanning RAG, recommenders, and agentic AI in both production and research settings.
           </p>
         </div>
 
