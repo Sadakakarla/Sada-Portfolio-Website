@@ -2,7 +2,9 @@
 
 **Goal**: Create a separate copy of this portfolio website for another person (same field/experience as user), on her own GitHub account + Vercel account, deployed independently.
 
-**Status as of**: 2026-07-04 — Planning complete, execution not started.
+**Status as of**: 2026-07-04 — Phase 1 complete. Tracker now lives inside project folder.
+
+**Project folder**: `~/Documents/Github/Sada's Portfolio Website`
 
 ---
 
@@ -19,12 +21,12 @@
 
 ## Step-by-Step Plan
 
-### Phase 1 — Local project setup
-- [ ] Copy `Portfolio Website/portfolio` folder to new location (e.g. `~/Documents/Github/new-portfolio`)
-- [ ] Remove `.git`, `.next`, `node_modules` from the copy
-- [ ] `npm install` fresh in new location
-- [ ] `git init`
-- [ ] `git add .` + initial commit
+### Phase 1 — Local project setup ✅ DONE
+- [x] Copy `Portfolio Website/portfolio` folder to `~/Documents/Github/Sada's Portfolio Website`
+- [x] Remove `.git`, `.next`, `node_modules` from the copy
+- [x] `npm install` fresh in new location
+- [x] `git init`
+- [x] `git add .` + initial commit
 
 ### Phase 2 — GitHub account switch (her account)
 - [ ] Open GitHub Desktop → sign in as her (separate from terminal, no conflict)
