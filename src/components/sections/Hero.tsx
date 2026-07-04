@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 import MagneticButton from "@/components/ui/magnetic-button";
+import FloatingSparkles from "@/components/ui/floating-sparkles";
 
 const name = "Sada Kakarla";
 const chars = name.split("");
@@ -20,10 +21,12 @@ export default function Hero() {
     <motion.section
       ref={ref}
       style={{ opacity, y }}
-      className="relative min-h-screen flex flex-col items-center justify-center px-8 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 overflow-hidden"
     >
+      <FloatingSparkles />
+
       {/* Content — split layout */}
-      <div className="relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="relative z-10 max-w-[1600px] w-full flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* Left — text */}
         <div className="flex flex-col gap-5 flex-1">
@@ -39,7 +42,7 @@ export default function Hero() {
           </motion.p>
 
           {/* Name — character by character */}
-          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-none">
+          <h1 className="font-heading text-6xl md:text-8xl font-bold tracking-tight text-foreground leading-none">
             {chars.map((char, i) => (
               <motion.span
                 key={i}
@@ -62,9 +65,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.1, duration: 0.5 }}
-            className="font-script text-3xl md:text-4xl text-[color:var(--peach)] -mt-2"
+            className="font-script text-4xl md:text-5xl text-[color:var(--peach)] -mt-2"
           >
-            AI Researcher &amp; ML Engineer
+            Applied AI &amp; ML Engineer
           </motion.p>
 
           {/* Tagline */}
@@ -72,7 +75,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.4, duration: 0.6 }}
-            className="font-sans text-sm md:text-base text-muted-foreground max-w-xl leading-relaxed"
+            className="font-sans text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
             Building production ML systems — LLMs, agentic workflows,
             reinforcement learning, retrieval pipelines, and recommender systems at scale.
@@ -88,7 +91,7 @@ export default function Hero() {
             <MagneticButton>
               <Link
                 href="#experience"
-                className="font-sans text-sm font-medium bg-primary text-primary-foreground px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
+                className="font-sans text-base font-medium bg-primary text-primary-foreground px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
               >
                 My Work
               </Link>
@@ -96,7 +99,7 @@ export default function Hero() {
             <MagneticButton>
               <Link
                 href="#contact"
-                className="font-sans text-sm font-medium bg-[color:var(--peach)] text-[#1B3A35] px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
+                className="font-sans text-base font-medium bg-[color:var(--peach)] text-[#1B3A35] px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
               >
                 Get in Touch
               </Link>
@@ -143,53 +146,58 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — photo with blob shapes */}
+        {/* Right — photo with bold arch shape */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 3.2, duration: 0.7, ease: "easeOut" }}
-          className="relative flex-shrink-0 w-72 h-[480px] md:w-[360px] md:h-[560px]"
+          className="relative flex-shrink-0 mt-16 md:mt-24 w-[340px] h-[500px] sm:w-[480px] sm:h-[640px] md:w-[560px] md:h-[78vh] md:max-h-[700px]"
         >
-          {/* Blob shapes behind photo */}
-          <div className="absolute -top-6 -left-6 w-[85%] h-[85%] rounded-[45%_55%_60%_40%/50%_45%_55%_50%] bg-primary opacity-25 blur-2xl" />
-          <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full bg-[color:var(--peach)] opacity-30 blur-2xl" />
-          <div className="absolute top-4 right-4 w-56 h-56 md:w-64 md:h-64 rounded-[42%_58%_55%_45%/55%_42%_58%_45%] bg-primary/15 border border-primary/20" />
+          {/* Sparkle accent near photo */}
+          <motion.svg
+            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 3.0, duration: 0.5 }}
+            viewBox="0 0 40 40"
+            className="absolute -top-8 left-2 md:-top-10 md:left-6 w-9 h-9 md:w-12 md:h-12 text-primary z-20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            <path d="M20 2v36M2 20h36M7 7l26 26M33 7L7 33" />
+          </motion.svg>
 
-          {/* Photo — cutout, no clipping mask */}
-          <div className="absolute inset-0 flex items-end justify-center z-10">
+          {/* Solid arch shape behind photo */}
+          <div className="absolute top-0 right-[6%] w-[80%] h-[92%] rounded-t-full bg-[color:var(--gold)]" />
+          {/* Teal quarter-circle bleeding off top-right corner */}
+          <div className="absolute -top-14 -right-14 w-44 h-44 md:w-60 md:h-60 rounded-full bg-primary" />
+          {/* Peach dot accent inside corner circle */}
+          <div className="absolute top-2 right-6 md:top-4 md:right-10 w-4 h-4 md:w-5 md:h-5 rounded-full bg-[color:var(--peach)]" />
+
+          {/* Photo — aligned to arch bounds */}
+          <div className="absolute top-0 right-[6%] w-[80%] h-[92%] flex items-end justify-center z-10">
             <Image
               src="/profile.png"
               alt="Sada Kakarla"
-              width={340}
-              height={520}
-              className="object-contain object-bottom max-h-full w-auto drop-shadow-2xl"
+              width={560}
+              height={760}
+              className="object-contain object-bottom h-full w-full drop-shadow-2xl"
               priority
             />
           </div>
-
-          {/* Sticker badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.6, rotate: -8 }}
-            animate={{ opacity: 1, scale: 1, rotate: -8 }}
-            transition={{ delay: 3.9, duration: 0.5 }}
-            className="absolute -top-3 -right-3 md:top-2 md:right-0 w-24 h-24 rounded-full bg-background border-2 border-primary flex flex-col items-center justify-center gap-1 z-20 shadow-lg"
-          >
-            <span className="font-sans text-[9px] font-bold text-primary uppercase tracking-wide text-center leading-tight px-2">
-              Open to Work
-            </span>
-          </motion.div>
 
           {/* Floating sticky note */}
           <motion.div
             initial={{ opacity: 0, y: 20, rotate: 0 }}
             animate={{ opacity: 1, y: 0, rotate: -4 }}
             transition={{ delay: 4.1, duration: 0.5 }}
-            className="absolute bottom-6 -left-8 md:-left-10 w-44 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-xl z-20"
+            className="absolute bottom-12 -left-8 md:-left-14 w-56 md:w-64 bg-primary text-primary-foreground rounded-2xl px-6 py-5 shadow-xl z-20"
           >
-            <p className="font-script text-lg leading-snug">
+            <p className="font-script text-2xl md:text-3xl leading-snug">
               Turning ideas into intelligent systems
             </p>
-            <Heart size={14} className="mt-1 fill-current" />
+            <Heart size={18} className="mt-2 fill-current" />
           </motion.div>
         </motion.div>
 

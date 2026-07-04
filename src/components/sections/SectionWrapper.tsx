@@ -20,7 +20,7 @@ export default function SectionWrapper({ id, children, className = "" }: Section
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -40 }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
-      className={`px-8 py-24 max-w-6xl mx-auto w-full scroll-mt-20 ${className}`}
+      className={`relative z-10 px-8 py-24 max-w-6xl mx-auto w-full scroll-mt-20 ${className}`}
     >
       {children}
     </motion.section>

@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/skills";
-import CircuitGrid from "@/components/ui/circuit-grid";
+import { GrainOverlay, DoodleField } from "@/components/ui/page-texture";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <GrainOverlay />
       <div className="relative">
-        <CircuitGrid />
+        <DoodleField />
         <About />
         <Skills />
         <Experience />

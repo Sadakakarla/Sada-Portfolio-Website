@@ -3,7 +3,6 @@
 import SectionWrapper from "./SectionWrapper";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 const projects = [
@@ -87,121 +86,116 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [activeId, setActiveId] = useState(projects[0].id);
-  const active = projects.find((p) => p.id === activeId)!;
+  const [activeId, setActiveId] = useState("");
 
   return (
     <SectionWrapper id="projects">
       <div className="flex flex-col gap-12">
 
         <div className="flex items-center gap-4">
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">04. Projects</span>
+          <span className="font-sans text-xs text-muted-foreground border border-border rounded-full px-4 py-1.5 tracking-wide uppercase">
+            04. Projects
+          </span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-          Ideas turned into systems<span className="text-primary">.</span>
+          Ideas turned into systems<span className="text-[color:var(--peach)]">.</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_500px] gap-10 items-start">
-
-          {/* Left: Project Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {projects.map((p, i) => (
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((p, i) => {
+            const isActive = activeId === p.id;
+            return (
               <motion.div
                 key={p.id}
+                layout
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ layout: { duration: 0.4, ease: "easeInOut" }, delay: i * 0.06 }}
                 viewport={{ once: true }}
-                onClick={() => setActiveId(p.id)}
-                className={`cursor-pointer rounded-xl border p-5 flex flex-col gap-3 transition-all duration-300 ${
-                  activeId === p.id
-                    ? "border-primary bg-primary/5 shadow-[0_0_20px_rgba(109,40,217,0.2)]"
+                onClick={() => setActiveId(isActive ? "" : p.id)}
+                whileHover={!isActive ? { rotate: i % 2 === 0 ? -1 : 1, y: -2 } : {}}
+                className={`cursor-pointer rounded-2xl border p-5 flex flex-col gap-4 transition-colors duration-300 ${
+                  isActive ? "sm:col-span-2 lg:col-span-3" : ""
+                } ${
+                  isActive
+                    ? "border-primary bg-card shadow-[0_0_20px_rgba(27,107,92,0.18)]"
                     : "border-border bg-card hover:border-primary/40"
                 }`}
               >
-                <div className="flex flex-col gap-1">
-                  <span className="font-heading text-sm font-bold text-foreground">{p.name}</span>
-                  <span className="font-mono text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                    {p.tagline}
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {p.tags.slice(0, 3).map((tag) => (
+                <motion.div layout="position" className="flex flex-col gap-1">
+                  <span className="font-heading text-base font-bold text-foreground">{p.name}</span>
+                  {isActive ? (
+                    <span className="font-script text-xl text-[color:var(--peach)] leading-relaxed">{p.tagline}</span>
+                  ) : (
+                    <span className="font-sans text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                      {p.tagline}
+                    </span>
+                  )}
+                </motion.div>
+
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex flex-col gap-3 overflow-hidden"
+                    >
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-3 font-sans text-sm text-muted-foreground leading-relaxed">
+                          <span className="text-primary mt-1 flex-shrink-0">▸</span>
+                          {b}
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+
+                <motion.div layout="position" className="flex flex-wrap gap-1.5 mt-auto">
+                  {(isActive ? p.tags : p.tags.slice(0, 3)).map((tag, ti) => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] text-primary border border-primary/30 px-2 py-0.5 rounded-full bg-primary/5"
+                      className="font-sans text-[10px] px-2 py-0.5 rounded-full"
+                      style={
+                        ti % 2 === 0
+                          ? { color: "var(--peach)", border: "1px solid color-mix(in srgb, var(--peach) 40%, transparent)", background: "color-mix(in srgb, var(--peach) 8%, transparent)" }
+                          : { color: "var(--gold)", border: "1px solid color-mix(in srgb, var(--gold) 45%, transparent)", background: "color-mix(in srgb, var(--gold) 12%, transparent)" }
+                      }
                     >
                       {tag}
                     </span>
                   ))}
-                  {p.tags.length > 3 && (
-                    <span className="font-mono text-[10px] text-muted-foreground px-2 py-0.5">
+                  {!isActive && p.tags.length > 3 && (
+                    <span className="font-sans text-[10px] text-muted-foreground px-2 py-0.5">
                       +{p.tags.length - 3}
                     </span>
                   )}
-                </div>
+                </motion.div>
+
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.a
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 font-sans text-xs font-medium text-primary-foreground bg-primary hover:opacity-90 transition-opacity px-5 py-2.5 rounded-full w-fit"
+                    >
+                      <SiGithub size={14} />
+                      View on GitHub
+                    </motion.a>
+                  )}
+                </AnimatePresence>
               </motion.div>
-            ))}
-          </div>
-
-          {/* Right: Sticky Detail Panel */}
-          <div className="md:sticky md:top-28">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="flex flex-col gap-6 border border-border bg-card p-8 rounded-2xl"
-              >
-                <div className="flex flex-col gap-1">
-                  <h3 className="font-heading text-2xl font-bold text-foreground">{active.name}</h3>
-                  <span className="font-mono text-xs text-primary leading-relaxed">{active.tagline}</span>
-                </div>
-
-                <ul className="flex flex-col gap-3">
-                  {active.bullets.map((b, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.07 }}
-                      className="flex items-start gap-3 font-mono text-sm text-muted-foreground leading-relaxed"
-                    >
-                      <span className="text-primary mt-1 flex-shrink-0">▸</span>
-                      {b}
-                    </motion.li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-2">
-                  {active.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-xs text-primary border border-primary/30 px-3 py-1 rounded-full bg-primary/5"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                    href={active.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary border border-border hover:border-primary/50 px-4 py-2 rounded-lg transition-all duration-200 w-fit"
-                    >
-                    <SiGithub size={14} />
-                    View on GitHub
-                </a>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-        </div>
+            );
+          })}
+        </motion.div>
       </div>
     </SectionWrapper>
   );

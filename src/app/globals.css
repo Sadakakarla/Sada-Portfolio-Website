@@ -42,6 +42,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-peach: var(--peach);
+  --color-gold: var(--gold);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -67,6 +68,7 @@
   --accent: #1B6B5C;
   --accent-foreground: #FDF3E7;
   --peach: #F2A785;
+  --gold: #F2C078;
   --destructive: oklch(0.577 0.245 27.325);
   --border: rgba(27,58,53,0.12);
   --input: rgba(27,58,53,0.12);
@@ -98,6 +100,7 @@
   --accent: #3ECFB8;
   --accent-foreground: #0D1A17;
   --peach: #F2A785;
+  --gold: #F2C078;
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(245,235,221,0.08);
   --input: rgba(245,235,221,0.08);

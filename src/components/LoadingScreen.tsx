@@ -23,7 +23,7 @@ export default function LoadingScreen() {
         >
           <div className="relative flex items-center justify-center">
             <div className="loader-orb" />
-            <span className="loader-orb-text">Generating</span>
+            <span className="loader-orb-text">Thinking....</span>
           </div>
         </motion.div>
       )}

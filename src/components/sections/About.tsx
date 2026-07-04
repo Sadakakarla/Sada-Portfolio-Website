@@ -45,8 +45,8 @@ export default function About() {
         {/* Bio — full width */}
         <div className="flex flex-col gap-6 max-w-3xl">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
-            Building intelligent systems that<br />
-            <span className="text-primary">think & learn at scale.</span>
+            Building intelligent systems <br />
+            <span className="text-primary">that think & learn at scale.</span>
           </h2>
           <p className="font-mono text-sm text-muted-foreground leading-relaxed">
             I'm an experienced AI/ML Engineer who builds production AI systems end to end — from model behavior to software reliability — with a focus on LLMs, RAG, reinforcement learning, agents, ranking, and recommender systems that stay fast, safe, and measurable at scale. I operate as an AI/ML Engineer and Software Engineer in one, shipping systems that survive real traffic, enterprise constraints, and messy data.
