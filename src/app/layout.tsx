@@ -25,7 +25,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Shivansh Gupta",
+  title: "Sada Kakarla",
   description: "Portfolio — Research, Projects, Writing",
 };
 

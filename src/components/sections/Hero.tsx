@@ -8,7 +8,7 @@ import NeuralCanvas from "@/components/ui/neural-canvas";
 import MagneticButton from "@/components/ui/magnetic-button";
 
 
-const name = "Shivansh Gupta";
+const name = "Sada Kakarla";
 const chars = name.split("");
 
 export default function Hero() {
@@ -76,7 +76,7 @@ export default function Hero() {
             className="font-mono text-sm md:text-base text-muted-foreground max-w-xl leading-relaxed"
           >
             Building production ML systems — LLMs, agentic workflows,
-            retrieval pipelines, and recommender systems at scale.
+            reinforcement learning, retrieval pipelines, and recommender systems at scale.
           </motion.p>
 
           {/* CTAs */}
@@ -112,7 +112,7 @@ export default function Hero() {
             className="flex items-center gap-6 mt-2"
           >
             <a
-              href="https://github.com/shivansh052k"
+              href="https://github.com/Sadakakarla"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
@@ -120,15 +120,15 @@ export default function Hero() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/-shivansh-gupta"
+              href="https://www.linkedin.com/in/sada-kakarla/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
             >
               LinkedIn
             </a>
-                        <a
-              href="mailto:shivanshgupta323@gmail.com"
+            <a
+              href="mailto:sadaa.kakarla@gmail.com"
               className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
             >
               Email
@@ -155,10 +155,11 @@ export default function Hero() {
           <div className="relative w-72 h-[480px] md:w-[340px] md:h-[560px] rounded-[200px] overflow-hidden z-10">
             <Image
               src="/profile.png"
-              alt="Shivansh Gupta"
+              alt="Sada Kakarla"
               fill
               className="object-cover object-top"
               priority
+              sizes="(max-width: 768px) 288px, 340px"
             />
             <div className="absolute inset-0 border border-primary opacity-30 rounded-[200px]" />
           </div>

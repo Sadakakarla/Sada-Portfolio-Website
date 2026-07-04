@@ -45,7 +45,7 @@ export default function Navbar() {
         href="/"
         className="font-heading text-2xl font-bold tracking-tight text-foreground"
       >
-        SG<span className="text-primary">.</span>
+        SK<span className="text-primary">.</span>
       </Link>
 
       <nav className="hidden md:flex items-center gap-8">

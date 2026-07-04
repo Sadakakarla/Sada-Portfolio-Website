@@ -28,25 +28,27 @@
 - [x] `git init`
 - [x] `git add .` + initial commit
 
-### Phase 2 — GitHub account switch (her account)
-- [ ] Open GitHub Desktop → sign in as her (separate from terminal, no conflict)
-- [ ] Browser: create new empty repo under her GitHub account (no README/license, since files already exist)
-- [ ] GitHub Desktop: File → Add Local Repository → select the new-portfolio folder
-- [ ] GitHub Desktop: Publish repository → target her new repo
-- [ ] Verify push succeeded and repo shows up correctly on her GitHub
+### Phase 2 — GitHub account switch (her account) ✅ DONE
+- [x] Open GitHub Desktop → signed in as her
+- [x] Browser: created empty repo `Sada-Portfolio-Website` under her GitHub account
+- [x] GitHub Desktop: Add Local Repository → selected project folder
+- [x] Pushed via GitHub Desktop (not terminal — see lesson below) → `Sada-Portfolio-Website`
+- [x] Verified files present on her GitHub
+
+**Lesson learned**: GitHub Desktop's "Publish repository" auto-creates a new repo (`Sada-s-Portfolio-Website`, private, duplicate) if local repo isn't linked yet — don't rely on it, link to existing repo via `git remote set-url` first. Also: terminal `git push` failed with 403 even after fixing remote URL, because macOS Keychain had cached credentials for the user's own GitHub account — terminal auth always defaults to user's account regardless of remote URL. **Push must be done via GitHub Desktop app itself** (signed in as her), never via terminal, for any push to her repo. Duplicate private repo `Sada-s-Portfolio-Website` should be deleted via browser Settings.
 
 ### Phase 3 — Content swap (section by section, at own pace)
 Files to edit, in order:
-- [ ] `src/components/sections/Hero.tsx` — name, tagline
+- [x] `src/components/sections/Hero.tsx` — name, tagline, role/location label, social links, resume link, photo alt text
+- [x] `public/profile.png` — swapped photo
+- [x] `src/app/layout.tsx` — page `metadata.title` updated to her name
+- [x] `src/app/favicon.ico` — swapped favicon (initials icon)
 - [ ] `src/components/sections/About.tsx` — bio, stats
 - [ ] `src/components/sections/Experience.tsx` — work history
 - [ ] `src/components/sections/Projects.tsx` — project details
 - [ ] `src/components/sections/Education.tsx` — education details
 - [ ] `src/components/sections/Contact.tsx` — email, social links
 - [ ] `src/components/Footer.tsx` / `src/components/Navbar.tsx` — name/links
-- [ ] `src/app/layout.tsx` — page `metadata` (title, description)
-- [ ] `public/profile.png` — swap photo
-- [ ] `src/app/favicon.ico` — swap favicon
 - [ ] `README.md` — update project description
 
 ### Phase 4 — Aesthetic / frontend changes
