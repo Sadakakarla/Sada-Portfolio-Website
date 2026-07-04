@@ -49,7 +49,7 @@ Files to edit, in order:
 - [x] `src/components/sections/Education.tsx` — MS AI @ UB, BTech CS @ PES University — coursework left empty (not on her resume)
 - [x] `src/components/sections/Contact.tsx` — email, location, GitHub/LinkedIn links, Calendly updated
 - [x] `src/components/Footer.tsx` / `src/components/Navbar.tsx` — name/links (Navbar already had "SK." logo)
-- [ ] `README.md` — update project description
+- [x] `README.md` — updated project description
 
 **Phase 3 core sections: DONE.** Order changed — doing Phase 5 (contact backend) before Phase 4 (aesthetics), aesthetics saved for after whole site content is in place.
 
@@ -102,11 +102,12 @@ Goal: full visual overhaul so it doesn't look like "a guy's portfolio" — dark/
 - [x] Updated `to:` recipient email in `src/app/api/contact/route.ts` to hers
 - [x] Tested contact form locally — delivered successfully
 
-### Phase 6 — Deploy on her Vercel (browser only, no CLI)
-- [ ] Her Vercel dashboard → Add New Project → Import from GitHub → select her repo
-- [ ] Add environment variables in Vercel (Settings → Environment Variables) — match `.env.local`
-- [ ] Deploy
-- [ ] Verify live site loads, contact form works end-to-end
+### Phase 6 — Deploy on her Vercel (browser only, no CLI) ✅ DONE
+- [x] Her Vercel dashboard → Add New Project → Import from GitHub → select her repo
+- [x] Add environment variables in Vercel (Settings → Environment Variables) — match `.env.local`
+- [x] Deploy
+- [x] Verify live site loads, contact form works end-to-end
+- [x] Renamed Vercel project → custom `.vercel.app` URL: `sadakakarla.vercel.app`
 
 ### Phase 7 — Optional: custom domain
 - [ ] Add domain in Vercel project → Domains
