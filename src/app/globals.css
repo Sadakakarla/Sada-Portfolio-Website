@@ -69,6 +69,8 @@
   --accent-foreground: #FDF3E7;
   --peach: #F2A785;
   --gold: #F2C078;
+  --peach-text: #B85C34;
+  --gold-text: #9C6B1E;
   --destructive: oklch(0.577 0.245 27.325);
   --border: rgba(27,58,53,0.12);
   --input: rgba(27,58,53,0.12);
@@ -101,6 +103,8 @@
   --accent-foreground: #0D1A17;
   --peach: #F2A785;
   --gold: #F2C078;
+  --peach-text: #F2A785;
+  --gold-text: #F2C078;
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(245,235,221,0.08);
   --input: rgba(245,235,221,0.08);

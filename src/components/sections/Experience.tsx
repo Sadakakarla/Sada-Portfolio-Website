@@ -113,7 +113,7 @@ function TimelineEntry({
           viewport={{ once: true }}
           className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
             isActive
-              ? "border-primary bg-primary shadow-[0_0_12px_rgba(173,95,255,0.7)]"
+              ? "border-primary bg-primary shadow-[0_0_12px_rgba(27,107,92,0.5)]"
               : "border-border bg-background"
           }`}
         />
@@ -136,14 +136,14 @@ function TimelineEntry({
           {exp.company}
         </span>
         <span
-          className={`font-mono text-xs transition-colors duration-300 ${
+          className={`font-sans text-xs transition-colors duration-300 ${
             isActive ? "text-primary" : "text-muted-foreground"
           }`}
         >
           {exp.role}
         </span>
-        <span className="font-mono text-xs text-muted-foreground">{exp.period}</span>
-        <span className="font-mono text-xs text-muted-foreground">{exp.location}</span>
+        <span className="font-sans text-xs text-muted-foreground">{exp.period}</span>
+        <span className="font-sans text-xs text-muted-foreground">{exp.location}</span>
       </div>
     </div>
   );
@@ -179,7 +179,9 @@ export default function Experience() {
       <div className="flex flex-col gap-12">
 
         <div className="flex items-center gap-4">
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">03. Experience</span>
+          <span className="font-sans text-xs text-muted-foreground border border-border rounded-full px-4 py-1.5 tracking-wide uppercase">
+            03. Experience
+          </span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -220,13 +222,13 @@ export default function Experience() {
                 className="flex flex-col gap-6 border border-border bg-card p-8 rounded-2xl"
               >
                 <div className="flex flex-col gap-1">
-                  <span className="font-mono text-xs text-primary uppercase tracking-widest">
+                  <span className="font-sans text-xs text-primary uppercase tracking-widest">
                     {experiences[activeIndex].period} · {experiences[activeIndex].location}
                   </span>
                   <h3 className="font-heading text-2xl font-bold text-foreground">
                     {experiences[activeIndex].role}
                   </h3>
-                  <span className="font-mono text-sm text-muted-foreground">
+                  <span className="font-script text-xl text-[color:var(--peach-text)]">
                     {experiences[activeIndex].company}
                   </span>
                 </div>
@@ -238,7 +240,7 @@ export default function Experience() {
                       initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.07 }}
-                      className="flex items-start gap-3 font-mono text-sm text-muted-foreground leading-relaxed"
+                      className="flex items-start gap-3 font-sans text-sm text-muted-foreground leading-relaxed"
                     >
                       <span className="text-primary mt-1 flex-shrink-0">▸</span>
                       {b}
@@ -247,10 +249,15 @@ export default function Experience() {
                 </ul>
 
                 <div className="flex flex-wrap gap-2">
-                  {experiences[activeIndex].tags.map((tag) => (
+                  {experiences[activeIndex].tags.map((tag, ti) => (
                     <span
                       key={tag}
-                      className="font-mono text-xs text-primary border border-primary/30 px-3 py-1 rounded-full bg-primary/5"
+                      className="font-sans text-xs px-3 py-1 rounded-full"
+                      style={
+                        ti % 2 === 0
+                          ? { color: "var(--peach-text)", border: "1px solid color-mix(in srgb, var(--peach) 40%, transparent)", background: "color-mix(in srgb, var(--peach) 8%, transparent)" }
+                          : { color: "var(--gold-text)", border: "1px solid color-mix(in srgb, var(--gold) 45%, transparent)", background: "color-mix(in srgb, var(--gold) 12%, transparent)" }
+                      }
                     >
                       {tag}
                     </span>

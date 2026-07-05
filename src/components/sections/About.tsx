@@ -46,7 +46,7 @@ export default function About() {
         <div className="flex flex-col gap-6 max-w-3xl">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
             Building intelligent systems <br />
-            <span className="text-primary">that think & learn at scale.</span>
+            <span className="text-[color:var(--peach-text)] dark:text-primary">that think & learn at scale.</span>
           </h2>
           <p className="font-mono text-sm text-muted-foreground leading-relaxed">
             I'm an experienced AI/ML Engineer who builds production AI systems end to end — from model behavior to software reliability — with a focus on LLMs, RAG, reinforcement learning, agents, ranking, and recommender systems that stay fast, safe, and measurable at scale. I operate as an AI/ML Engineer and Software Engineer in one, shipping systems that survive real traffic, enterprise constraints, and messy data.
@@ -67,7 +67,7 @@ export default function About() {
               viewport={{ once: true }}
               className="flex flex-col items-center justify-center gap-2 bg-background py-10 px-6 text-center"
             >
-              <span className="font-heading text-4xl md:text-5xl font-bold text-primary">
+              <span className="font-heading text-4xl md:text-5xl font-bold text-[color:var(--peach-text)] dark:text-primary">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </span>
               <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">{stat.label}</span>

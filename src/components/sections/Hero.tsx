@@ -65,7 +65,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.1, duration: 0.5 }}
-            className="font-script text-4xl md:text-5xl text-[color:var(--peach)] -mt-2"
+            className="font-script text-4xl md:text-5xl text-[color:var(--peach-text)] -mt-2"
           >
             Applied AI &amp; ML Engineer
           </motion.p>
@@ -177,14 +177,16 @@ export default function Hero() {
 
           {/* Photo — aligned to arch bounds */}
           <div className="absolute top-0 right-[6%] w-[80%] h-[92%] flex items-end justify-center z-10">
-            <Image
-              src="/profile.png"
-              alt="Sada Kakarla"
-              width={560}
-              height={760}
-              className="object-contain object-bottom h-full w-full drop-shadow-2xl"
-              priority
-            />
+            <div className="w-[80%] h-[95%]">
+              <Image
+                src="/profile.png"
+                alt="Sada Kakarla"
+                width={560}
+                height={760}
+                className="object-cover object-bottom h-full w-full drop-shadow-2xl"
+                priority
+              />
+            </div>
           </div>
 
           {/* Floating sticky note */}

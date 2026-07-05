@@ -100,7 +100,7 @@ export default function Projects() {
         </div>
 
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-          Ideas turned into systems<span className="text-[color:var(--peach)]">.</span>
+          Ideas turned into systems<span className="text-[color:var(--peach-text)]">.</span>
         </h2>
 
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -127,7 +127,7 @@ export default function Projects() {
                 <motion.div layout="position" className="flex flex-col gap-1">
                   <span className="font-heading text-base font-bold text-foreground">{p.name}</span>
                   {isActive ? (
-                    <span className="font-script text-xl text-[color:var(--peach)] leading-relaxed">{p.tagline}</span>
+                    <span className="font-script text-xl text-[color:var(--peach-text)] leading-relaxed">{p.tagline}</span>
                   ) : (
                     <span className="font-sans text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                       {p.tagline}
@@ -161,8 +161,8 @@ export default function Projects() {
                       className="font-sans text-[10px] px-2 py-0.5 rounded-full"
                       style={
                         ti % 2 === 0
-                          ? { color: "var(--peach)", border: "1px solid color-mix(in srgb, var(--peach) 40%, transparent)", background: "color-mix(in srgb, var(--peach) 8%, transparent)" }
-                          : { color: "var(--gold)", border: "1px solid color-mix(in srgb, var(--gold) 45%, transparent)", background: "color-mix(in srgb, var(--gold) 12%, transparent)" }
+                          ? { color: "var(--peach-text)", border: "1px solid color-mix(in srgb, var(--peach) 40%, transparent)", background: "color-mix(in srgb, var(--peach) 8%, transparent)" }
+                          : { color: "var(--gold-text)", border: "1px solid color-mix(in srgb, var(--gold) 45%, transparent)", background: "color-mix(in srgb, var(--gold) 12%, transparent)" }
                       }
                     >
                       {tag}

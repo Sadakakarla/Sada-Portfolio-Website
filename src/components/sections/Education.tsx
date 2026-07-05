@@ -28,7 +28,9 @@ export default function Education() {
       <div className="flex flex-col gap-12">
 
         <div className="flex items-center gap-4">
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">05. Education</span>
+          <span className="font-sans text-xs text-muted-foreground border border-border rounded-full px-4 py-1.5 tracking-wide uppercase">
+            05. Education
+          </span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -49,21 +51,26 @@ export default function Education() {
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-heading text-xl font-bold text-foreground">{edu.degree}</h3>
-                  <span className="font-mono text-sm text-primary">{edu.institution}</span>
+                  <span className="font-script text-xl text-[color:var(--peach-text)]">{edu.institution}</span>
                 </div>
                 <div className="flex flex-col items-start md:items-end gap-1 flex-shrink-0">
-                  <span className="font-mono text-xs text-muted-foreground">{edu.period}</span>
-                  <span className="font-mono text-xs text-muted-foreground">{edu.location}</span>
+                  <span className="font-sans text-xs text-muted-foreground">{edu.period}</span>
+                  <span className="font-sans text-xs text-muted-foreground">{edu.location}</span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Relevant Coursework</span>
+                <span className="font-sans text-xs text-muted-foreground uppercase tracking-widest">Relevant Coursework</span>
                 <div className="flex flex-wrap gap-2">
-                  {edu.coursework.map((course) => (
+                  {edu.coursework.map((course, ci) => (
                     <span
                       key={course}
-                      className="font-mono text-xs text-foreground/70 border border-border px-3 py-1 rounded-full"
+                      className="font-sans text-xs px-3 py-1 rounded-full"
+                      style={
+                        ci % 2 === 0
+                          ? { color: "var(--peach-text)", border: "1px solid color-mix(in srgb, var(--peach) 40%, transparent)", background: "color-mix(in srgb, var(--peach) 8%, transparent)" }
+                          : { color: "var(--gold-text)", border: "1px solid color-mix(in srgb, var(--gold) 45%, transparent)", background: "color-mix(in srgb, var(--gold) 12%, transparent)" }
+                      }
                     >
                       {course}
                     </span>
