@@ -26,7 +26,7 @@ export default function Contact() {
       <div className="flex flex-col gap-12">
 
         <div className="flex items-center gap-4">
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">06. Contact</span>
+          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">07. Contact</span>
           <div className="flex-1 h-px bg-border" />
         </div>
 

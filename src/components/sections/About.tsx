@@ -7,9 +7,12 @@ import { useEffect, useRef } from "react";
 const stats = [
   { value: 2, suffix: "+", label: "Years of Experience" },
   { value: 4, suffix: "+", label: "Industries" },
-  { value: 2, suffix: "", label: "Multi-Stage Companies" },
+  { value: 4, suffix: " ", label: "Multi-Stage Companies" },
   { value: 8, suffix: "+", label: "AI Models Deployed" },
-  { value: 2, suffix: "", label: "Research Papers Published" },
+  { value: 12, suffix: "B+", label: "Tokens Processed" },
+  { value: 15, suffix: "", label: "Avg hours saved" },
+  { value: 120, suffix: "K+", label: "Multi Modal Records Processed" },
+  { value: 3, suffix: "", label: "Research Papers Published" }
 ];
 
 function CountUp({ value, suffix }: { value: number; suffix: string }) {

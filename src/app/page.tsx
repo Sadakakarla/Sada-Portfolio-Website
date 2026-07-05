@@ -5,6 +5,7 @@ import { GrainOverlay, DoodleField } from "@/components/ui/page-texture";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
+import Publications from "@/components/sections/Publications";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Education />
+        <Publications />
         <Contact />
         <Footer />
       </div>

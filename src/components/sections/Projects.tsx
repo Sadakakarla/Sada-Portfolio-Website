@@ -37,7 +37,7 @@ const projects = [
       "Reduced unsafe medical recommendations by 32% with an XGBoost safety pipeline, delivered through a Next.js/TypeScript interface.",
     ],
     tags: ["GraphRAG", "BGE-M3", "HyDE", "XGBoost", "Next.js", "TypeScript"],
-    github: "#",
+    github: "https://github.com/Sadakakarla/Graph-RAG-Pipeline-for-Medical-QA",
   },
   {
     id: "powersight",
@@ -70,7 +70,7 @@ const projects = [
       "Engineered a temporal deep learning pipeline using a dual LSTM to model long-term behavioral dependencies across video sequences, achieving 98% predictive accuracy and earned Best Capstone Project recognition for its clinical and social impact.",
     ],
     tags: ["Python", "PyTorch", "OpenCV", "LSTM", "BERT", "CNNs"],
-    github: "#",
+    github: "https://github.com/Sadakakarla/Leveraging-VQA-to-Analyse-Autism-Spectrum-Disorder",
   },
   {
     id: "eagleeye",
@@ -83,6 +83,39 @@ const projects = [
     tags: ["YOLO", "OpenCV", "ByteTrack", "FastAPI", "Docker", "ONNX/TensorRT"],
     github: "#",
   },
+  {
+    id: "meritflow",
+    name: "Merit Flow AI",
+    tagline: "Agentic AI Orchestration for Workplace Recognition & Growth",
+    bullets: [
+      "Built for IBM Dev Day AI Demystified 2026 Hackathon — orchestrated 3 intelligent agents (Recognition Engine, Growth Pathfinder, Culture Pulse) using IBM watsonx Orchestrate and Granite-3-8b-instruct to automate workplace recognition, personalized learning recommendations, and anonymous culture health reporting.",
+      "Designed custom OpenAPI skills for HR backend integration, enabling context-aware manager nudges on project completion and skill-gap-triggered course recommendations derived from project activity logs.",
+    ],
+    tags: ["IBM watsonx", "Granite-3B", "OpenAPI", "Python", "Docker"],
+    github: "https://github.com/shivansh052k/Merit_Flow_AI",
+  },
+  {
+    id: "conductor",
+    name: "Conductor",
+    tagline: "Distributed Workflow Orchestration Engine",
+    bullets: [
+      "Constructed a Temporal-inspired Go workflow orchestration engine with dual-direction saga compensation (forward retry, backward rollback), exactly-once execution guarantees, and configurable worker pools sustaining 500+ activity executions per second.",
+      "Hardened with PostgreSQL-backed durable state persistence, dead-letter queuing for permanently failed workflows, and backward-compatible versioning for zero-downtime in-flight migrations, achieving sub-second status propagation.",
+    ],
+    tags: ["Go", "PostgreSQL", "Temporal", "Saga Pattern", "Dead-letter Queue"],
+    github: "#",
+  },
+  {
+    id: "slideintoinboxes",
+    name: "SlideIntoInboxes",
+    tagline: "Full-Stack Automated Cold Email Outreach Dashboard",
+    bullets: [
+      "Built a full-stack cold email automation dashboard connecting Google Sheets contact lists to a FastAPI scheduling backend, enabling WYSIWYG template editing, checkbox-based recipient targeting, and APScheduler-driven multi-job campaign execution.",
+      "Integrated Gmail SMTP with Google Service Account auth, PDF resume attachment automation, live job tracker with execution logs, and fuzzy contact matching across bulk recipient lists.",
+    ],
+    tags: ["FastAPI", "React", "APScheduler", "Gmail SMTP", "Python", "Google Sheets API"],
+    github: "#",
+  }
 ];
 
 export default function Projects() {
